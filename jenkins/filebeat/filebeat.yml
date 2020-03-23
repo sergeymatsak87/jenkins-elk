@@ -2,7 +2,7 @@ filebeat:
   inputs:
     -
       paths:
-        - "/var/jenkins_home/jobs/*/builds/*/log"
+        - "/var/jenkins_home/jobs/*/jobs/*/branches/*/builds/*/log"
 
 output:
   logstash:
