@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.187
+FROM jenkins/jenkins:2.190.1
 
 MAINTAINER Serhii Matsak
 
