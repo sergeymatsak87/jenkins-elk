@@ -1,7 +1,13 @@
 filebeat.inputs:
   - type: log
     paths:
-      - /var/jenkins_home/jobs/*/jobs/*/branches/*/builds/*/log
+      - ${JENKINS_HOME}/jobs/*/jobs/*/branches/*/builds/*/log
+      - ${JENKINS_HOME}/jobs/*/jobs/*/builds/*/log
+      - ${JENKINS_HOME}/jobs/*/builds/*/log
+    multiline.pattern: 'Started by'
+    multiline.negate: true
+    multiline.match: after
+    multiline.flush_pattern: 'Finished:'
 
 output.logstash:
   hosts: ["logstash:5044"]
